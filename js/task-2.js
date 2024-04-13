@@ -24,3 +24,36 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+const listEl = document.querySelector(`.gallery`);
+
+// images.forEach(image => {
+//   const itemEl = document.createElement(`li`);
+//   const imageEl = document.createElement(`img`);
+//   imageEl.setAttribute('src', image.url);
+//   imageEl.setAttribute('alt', image.alt);
+//   itemEl.classList.add('li-indent')
+//   imageEl.style.maxWidth = `100%`;
+//   imageEl.style.height = `auto`;
+//   itemEl.style.marginRight = `24px`;
+//   itemEl.append(imageEl);
+//   listEl.append(itemEl);
+// })
+
+// ****** не знаю, як далі правильно працювати з кодом вище...****//
+
+function createItemEL(item) {
+  const itemEl = document.createElement('li');
+  itemEl.classList.add('li-indent');
+  itemEl.style.marginRight = `24px`;
+  const imageEl = document.createElement(`img`);
+  imageEl.setAttribute('src', item.url);
+  imageEl.setAttribute('alt', item.alt);
+  imageEl.style.maxWidth = `100%`;
+  imageEl.style.height = `auto`;
+  itemEl.append(imageEl);
+  return itemEl;
+}
+
+const results = images.map(createItemEL);
+listEl.append(...results);
