@@ -4,18 +4,18 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const inputNUmb = document.querySelector('input[type="number"]');
+const inputNum = document.querySelector('input[type="number"]');
 const crtBtn = document.querySelector('button[data-create]');
 const dstrBtn = document.querySelector('button[data-destroy]');
 const boxesDiv = document.getElementById('boxes');
 
-crtBtn.addEventListener('click', createBoxes);
+crtBtn.addEventListener('click', ()=> (createBoxes(inputNum.value)));
 dstrBtn.addEventListener('click', destroyBoxes);
 
-function createBoxes() {
-    const amount = inputNUmb.value;
+function createBoxes(amount) {
     
-    if (amount < 1 || amount > 100) {
+    if (amount < 1 || amount > 100) {   
+        return alert('please add number from 1 to 100')
     }
     
     const boxes = [];
@@ -31,10 +31,10 @@ function createBoxes() {
     }
     
     boxesDiv.append(...boxes);
-    inputNUmb.value = "";
+    inputNum.value = "";
 }
 
-function destroyBoxes() {
+function destroyBoxes(){
     boxesDiv.innerHTML = '';
 }
 
