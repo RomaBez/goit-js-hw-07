@@ -14,6 +14,8 @@ email: formEmail,
 password: formPassword,
 }
     
+    console.log(info);
+    
 event.currentTarget.reset();
 
 }

@@ -10,7 +10,7 @@ const dstrBtn = document.querySelector('button[data-destroy]');
 const boxesDiv = document.getElementById('boxes');
 
 crtBtn.addEventListener('click', ()=> (createBoxes(inputNum.value)));
-dstrBtn.addEventListener('click', destroyBoxes);
+dstrBtn.addEventListener('click', () => destroyBoxes);
 
 function createBoxes(amount) {
     
