@@ -31,7 +31,7 @@ function createBoxes() {
     }
     
     boxesDiv.append(...boxes);
-    inputNUmb.form.reset();
+    inputNUmb.value = "";
 }
 
 function destroyBoxes() {
